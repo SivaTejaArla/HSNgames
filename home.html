@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSN games</title>
+    <link rel="icon" href="backgrounds/logo.png">
+    <style>
+        body{
+            background-color: rgb(24, 24, 24);
+            overflow-y: scroll;
+        }
+        .navigation button{
+
+            height:35px;
+            width:90px;
+            background-color: rgb(60, 60, 60);
+            border-radius: 5px;
+            box-shadow: 20px;
+            float:left;
+            text-shadow: 10px;
+            color: white;
+            margin-left: 5px;
+            box-shadow: 1px 1px 5px rgb(137,131,131);
+        }
+        .navigation button:hover{
+            background-color: black;
+            color:white;
+        }
+        .navigation button:active{
+            background-color: rgb(9, 128, 33);
+            color:white;
+        }
+  div img {
+    height: 35px;
+    float: left;
+  }
+       fieldset{
+        background-color: rgb(60, 60, 60);
+        border: 0px;
+        position: sticky;
+       }
+       div input{
+        margin-top: 5px;
+        border-radius: 5px;
+        height:22px;
+        float:right;
+        width: 250px;
+       }
+       #login{
+            height:35px;
+            width:90px;
+            background-color: rgb(9, 128, 33);
+            border-radius: 5px;
+            box-shadow: none;
+            float:right;
+            text-shadow: 10px;
+            color: white;
+            margin-right: 5px;
+        
+       }
+       #login:hover{
+        background-color: rgb(54, 30, 212);
+       }
+       #gamesdisplay{
+        border-radius: 20px;
+       margin-left: 250px;
+        width:60%;
+        height:500px;
+        box-shadow: 5px 5px 10px rgb(137, 131, 131);
+        background-image: url(backgrounds/tetris.png);
+        background-size: cover;
+        animation: changegame 10s infinite;
+       }
+       @keyframes changegame{
+
+        0%{
+            background-image: url(backgrounds/tetris.png);
+        }
+        100%{
+            background-image: url(backgrounds/snakegame.jpg);
+        }
+       }
+       
+    </style>
+</head>
+<body >
+    <fieldset>
+        <div class="navigation">
+            <img src="backgrounds/logo.png">
+            <button>Store</button>
+            <button>Contact Us</button>
+            <button>About</button>
+            <input type="text" placeholder="Search.......">
+            <button id="login">Login</button>
+        </div></fieldset><br>
+        <fieldset id="gamesdisplay">
+            <legend style="color:white;font-size: xx-large;text-align: center;"><b>New Arrivals....</b></legend>
+
+
+
+        </fieldset><br><br>
+<h2 style="color: whitesmoke; margin-left: 50px;">Hot Cakes</h2>
+    
+</body>
+</html>
