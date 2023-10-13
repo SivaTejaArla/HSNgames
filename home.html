@@ -27,6 +27,8 @@
         .navigation button:hover{
             background-color: black;
             color:white;
+            height: 40px;
+        width: 95px;
         }
         .navigation button:active{
             background-color: rgb(9, 128, 33);
@@ -39,7 +41,11 @@
        fieldset{
         background-color: rgb(60, 60, 60);
         border: 0px;
+       
         position: sticky;
+        height: 46px;
+      
+        
        }
        div input{
         margin-top: 5px;
@@ -62,37 +68,61 @@
        }
        #login:hover{
         background-color: rgb(54, 30, 212);
+        height: 40px;
+        width: 95px;
+       }
+      
+
+       div .games{
+        height:300px;
+        margin-left: 200px;
+        width:250px;
+       box-shadow: 5px 5px 10px grey;
+        border-radius: 10px;
+        transition: 0.5s;
+       }
+      
+       div .games:hover{
+        height: 320px;
+        width:270px ;
+       }
+       #sidenav{
+        border:0px;
+        height:700px;
+        width:200px;
+        border-radius: 10px;
+        margin-left: 20px;
        }
        #gamesdisplay{
         border-radius: 20px;
-       margin-left: 250px;
+        display: inline-table;
         width:60%;
         height:500px;
         box-shadow: 5px 5px 10px rgb(137, 131, 131);
         background-image: url(backgrounds/tetris.png);
         background-size: cover;
-        animation: changegame 10s infinite;
        }
-       @keyframes changegame{
-
-        0%{
-            background-image: url(backgrounds/tetris.png);
-        }
-        100%{
-            background-image: url(backgrounds/snakegame.jpg);
-        }
-       }
-       div .games{
-        height:350px;
-        margin-left: 100px;
-        width:300px;
+       #navbuttonleft{
+        height:100px;
+        width:50px;
+        display: inline-table;
+        margin-left: 230px;
+       font-size: xx-large;
+       border-radius: 10px;
         color: whitesmoke;
+        background-color: rgb(9, 128, 33);
        }
-       .games:hover{
-        color: grey;
+       #navbuttonright{
+        height:100px;
+        width:50px;
+        display: inline-table;
+        font-size: xx-large;
+        border-radius: 10px;
+        color: whitesmoke;
+        margin-left: 15px;
+        background-color: rgb(9, 128, 33);
+        
        }
-      
-       
     </style>
 </head>
 <body >
@@ -104,25 +134,92 @@
             <button>About</button>
             <input type="text" placeholder="Search in the store....">
             <button id="login" onclick="window.open('login.html');">Login</button>
-        </div></fieldset><br>
+        </div></fieldset><br><div>
+    <div>
+            <button id="navbuttonleft" onclick="changeimageleft()"><b><</b></button>
         <fieldset id="gamesdisplay">
             <legend style="color:white;font-size: X-large;text-align: center;"><b>NOW AVAILABLE</b></legend>
 
 
 
-        </fieldset><br><br>
-<h3 style="color: whitesmoke; margin-left: 50px;">NEW ARRIVALS:</h3><br>
- <div>  <a> <img src="backgrounds/mariorun.webp" class="games title=MARIO RUN"></a><a><img class="games" src="backgrounds/trafficracing.jpeg"></a><a><img class="games" src="backgrounds/snakegame.jpg"></a></div>
-<br>
+    </fieldset><button id="navbuttonright" onclick="changeimageright()"><b>></b></button>
+    </div>
+    <hr><br>
+<h3 style="color: whitesmoke; margin-left: 300px;">NEW ARRIVALS:</h3><br>
+<fieldset id="sidenav">
 
 
 
 
 
+</fieldset>
+<script>
+    var count=0;
+    function display(button){
+        if(button=="left"){
+        count=count-1;
+        if(count<-3)
+        count=-3;
+    }
+    else{
+        count=count+1; 
+        if(count>3)
+        count=3; 
+    }
+    var b=document.getElementById("gamesdisplay");
+    switch (count){
+        case -1:
+            {
+                b.style.backgroundImage='url(backgrounds/snakegame.jpg)';
+                b.style.backgroundSize='cover';
+                break;
+            }
+        case -2:{
+            b.style.backgroundImage='url(backgrounds/pong.webp)';
+            b.style.backgroundSize='cover';
+            break;
+        }
+        case -3:{
+            b.style.backgroundImage='url(backgrounds/quizz.webp)';
+            b.style.backgroundSize='cover';
+            break;
+        }
+        case 1:{
+            b.style.backgroundImage='url(backgrounds/bouncingball.webp)';
+            b.style.backgroundSize='cover';
+            break;
+        }
+        case 2:{
+            b.style.backgroundImage='url(backgrounds/wackamole.webp)';
+            b.style.backgroundSize='cover';
+            break;
+        }
+        case 3: {
+            b.style.backgroundImage='url(backgrounds/memorygame.webp)';
+            b.style.backgroundSize='cover';
+            break;
+        }
+     
+        default:{
+            b.style.backgroundImage='url(backgrounds/tetris.png)';
+            b.style.backgroundSize='cover';
+        }
+       
 
+    }
+}
+function changeimageleft()
+{
+var button="left";
+display(button);
+}
+function changeimageright()
+{
+var button="right";
+display(button);
+}
 
-
-
-
+</script>
+<br><br><br><br><br><br>
 </body>
 </html>
