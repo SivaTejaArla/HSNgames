@@ -75,11 +75,12 @@
 
        div .games{
         height:300px;
-        margin-left: 200px;
+        margin-left: 100px;
         width:250px;
        box-shadow: 5px 5px 10px grey;
         border-radius: 10px;
         transition: 0.5s;
+        display: inline;
        }
       
        div .games:hover{
@@ -92,6 +93,7 @@
         width:200px;
         border-radius: 10px;
         margin-left: 20px;
+        float: left;
        }
        #gamesdisplay{
         border-radius: 20px;
@@ -123,6 +125,14 @@
         background-color: rgb(9, 128, 33);
         
        }
+       a{
+        color: whitesmoke;
+        font-size: larger;
+        margin-bottom: 100px;
+       }
+       figcaption{
+        text-align: inherit;
+       }
     </style>
 </head>
 <body >
@@ -134,7 +144,8 @@
             <button>About</button>
             <input type="text" placeholder="Search in the store....">
             <button id="login" onclick="window.open('login.html');">Login</button>
-        </div></fieldset><br><div>
+        </div></fieldset><br>
+        <marquee style="color: rgb(246, 255, 0) ;font-size: x-large;" scrollamount="10"><b>Welcome to HSN games........</b></marquee><br>
     <div>
             <button id="navbuttonleft" onclick="changeimageleft()"><b><</b></button>
         <fieldset id="gamesdisplay">
@@ -144,15 +155,23 @@
 
     </fieldset><button id="navbuttonright" onclick="changeimageright()"><b>></b></button>
     </div>
-    <hr><br>
+  <br>
+       <marquee style="color: whitesmoke ;font-size: x-large;background-color: rgb(60, 60, 60) ;height: 30px; " scrollamount="10"><b>“Play is our brain’s favorite way of learning.” – Diane Ackerman<span style="margin-left: 300px;">“Play is the highest form of research.” – Albert Einstein</span><span style="margin-left: 300px;">“Whoever wants to understand much must play much.” – Gottfried Benn</span><span style="margin-left: 300px;">“To give a child a mechanical toy is equivalent to playing for him” – Walter Wood</span><span style="margin-left: 300px;">“Nothing lights up a child’s brain like play.” – Dr. Stuart Brown</span></b></marquee>
+    <br>
 <h3 style="color: whitesmoke; margin-left: 300px;">NEW ARRIVALS:</h3><br>
+<div>
 <fieldset id="sidenav">
+</fieldset><a><figure>
+    <img src="backgrounds/mariorun.webp" class="games">
+    <figcaption>MARIO RUN</figcaption>
+</figure>
+</a>
 
 
 
 
 
-</fieldset>
+</div>
 <script>
     var count=0;
     function display(button){
@@ -175,17 +194,17 @@
                 break;
             }
         case -2:{
-            b.style.backgroundImage='url(backgrounds/pong.webp)';
+            b.style.backgroundImage='url(backgrounds/pong.jpg)';
             b.style.backgroundSize='cover';
             break;
         }
         case -3:{
-            b.style.backgroundImage='url(backgrounds/quizz.webp)';
+            b.style.backgroundImage='url(backgrounds/quizz.jpg';
             b.style.backgroundSize='cover';
             break;
         }
         case 1:{
-            b.style.backgroundImage='url(backgrounds/bouncingball.webp)';
+            b.style.backgroundImage='url(backgrounds/bouncingball.jpg)';
             b.style.backgroundSize='cover';
             break;
         }
