@@ -72,18 +72,37 @@
         width: 95px;
        }
       
-
-       div .games{
+       table .games1{
         height:300px;
-        margin-left: 100px;
+        
         width:250px;
        box-shadow: 5px 5px 10px grey;
         border-radius: 10px;
         transition: 0.5s;
         display: inline;
+      position: relative;
+       top:50px;
+       left:100px ;
+       }
+
+     table .games{
+        height:300px;
+        margin-left: 100px;
+        margin-top: 0px;
+        width:250px;
+       box-shadow: 5px 5px 10px grey;
+        border-radius: 10px;
+        transition: 0.5s;
+        display: inline;
+        margin-top: 0px;
+        
        }
       
-       div .games:hover{
+       table .games:hover{
+        height: 320px;
+        width:270px ;
+       }
+       table .games1:hover{
         height: 320px;
         width:270px ;
        }
@@ -94,6 +113,7 @@
         border-radius: 10px;
         margin-left: 20px;
         float: left;
+        display: inline;
        }
        #gamesdisplay{
         border-radius: 20px;
@@ -123,16 +143,16 @@
         color: whitesmoke;
         margin-left: 15px;
         background-color: rgb(9, 128, 33);
-        
        }
-       a{
-        color: whitesmoke;
-        font-size: larger;
-        margin-bottom: 100px;
+      
+       table{
+        border: 0px;
+      
        }
-       figcaption{
-        text-align: inherit;
+       tr{
+        height:340px;
        }
+     
     </style>
 </head>
 <body >
@@ -161,17 +181,37 @@
 <h3 style="color: whitesmoke; margin-left: 300px;">NEW ARRIVALS:</h3><br>
 <div>
 <fieldset id="sidenav">
-</fieldset><a><figure>
-    <img src="backgrounds/mariorun.webp" class="games">
-    <figcaption>MARIO RUN</figcaption>
-</figure>
-</a>
+
+</fieldset>
+
+<table>
+    <tr>
+        <td>
+           <a href=""><img src="backgrounds/mariorun.webp" alt="" class="games"></a> 
+        </td>
+        <td><a><img class="games" src="backgrounds/pong.jpg"></a></td>
+        <td><a><img class="games" src="backgrounds/tictactoe.webp"></a></td>
+    </tr>
+    <tr>
+        <td>
+            <a href=""><img src="backgrounds/cointoss.png" class="games"></a>
+        </td>
+        <td><a><img class="games" src="backgrounds/snakegame.jpg"></a></td>
+        <td><a><img src="backgrounds/bouncingball.jpg" class="games"></a></td>
+
+    </tr>
+
+</table>
+
 
 
 
 
 
 </div>
+
+
+
 <script>
     var count=0;
     function display(button){
