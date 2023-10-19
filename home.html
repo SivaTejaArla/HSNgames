@@ -70,20 +70,9 @@
         background-color: rgb(54, 30, 212);
         height: 40px;
         width: 95px;
+        cursor: pointer;
        }
-      
-       table .games1{
-        height:300px;
-        
-        width:250px;
-       box-shadow: 5px 5px 10px grey;
-        border-radius: 10px;
-        transition: 0.5s;
-        display: inline;
-      position: relative;
-       top:50px;
-       left:100px ;
-       }
+    
 
      table .games{
         height:300px;
@@ -94,18 +83,16 @@
         border-radius: 10px;
         transition: 0.5s;
         display: inline;
-        margin-top: 0px;
+   
         
        }
       
        table .games:hover{
         height: 320px;
         width:270px ;
+        cursor: pointer;
        }
-       table .games1:hover{
-        height: 320px;
-        width:270px ;
-       }
+  
        #sidenav{
         border:0px;
         height:700px;
@@ -114,6 +101,7 @@
         margin-left: 20px;
         float: left;
         display: inline;
+       height: 500px;
        }
        #gamesdisplay{
         border-radius: 20px;
@@ -145,6 +133,7 @@
         background-color: rgb(9, 128, 33);
        }
       
+      
        table{
         border: 0px;
       
@@ -152,7 +141,23 @@
        tr{
         height:340px;
        }
-     
+     ul{
+        color: whitesmoke;
+        font-size: larger;
+     }
+     li{
+        
+        color:rgb(31, 208, 67);
+        font-size: large;
+        transition: 0.9s;
+        list-style:disc;
+        transition: 0.2s;
+     }
+     li:hover{
+        font-size: larger;
+        color: whitesmoke;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body >
@@ -167,12 +172,9 @@
         </div></fieldset><br>
         <marquee style="color: rgb(246, 255, 0) ;font-size: x-large;" scrollamount="10"><b>Welcome to HSN games........</b></marquee><br>
     <div>
-            <button id="navbuttonleft" onclick="changeimageleft()"><b><</b></button>
+            <button id="navbuttonleft" onclick="changeimageleft()" ><b><</b></button>
         <fieldset id="gamesdisplay">
             <legend style="color:white;font-size: X-large;text-align: center;"><b>NOW AVAILABLE</b></legend>
-
-
-
     </fieldset><button id="navbuttonright" onclick="changeimageright()"><b>></b></button>
     </div>
   <br>
@@ -181,6 +183,28 @@
 <h3 style="color: whitesmoke; margin-left: 300px;">NEW ARRIVALS:</h3><br>
 <div>
 <fieldset id="sidenav">
+    <table>
+<ul>
+    MOST PLAYED:
+    <tr><li>Mario run</li></tr>
+    <tr><li>Tetris</li></tr>
+    <tr><li>Planet Defence</li></tr>
+    <tr><li>Bouncing Ball</li></tr>
+</ul>
+<ul>CHAT BUSTERS:
+    <tr><li>Coin Toss</li></tr>
+    <tr><li>Snake</li></tr>
+    <tr><li>Wack-a-mole</li></tr>
+    <tr><li>Memory game</li></tr>
+</ul>
+<ul>ENDLESS RUNNERS:
+    <tr><li>Floppy Bird</li></tr>
+    <tr><li>Mario Run</li></tr>
+    <tr><li>Planet Defence</li></tr>
+    <tr><li>Memory game</li></tr>
+</ul>
+
+    </table>
 
 </fieldset>
 
@@ -197,17 +221,42 @@
             <a href=""><img src="backgrounds/cointoss.png" class="games"></a>
         </td>
         <td><a><img class="games" src="backgrounds/snakegame.jpg"></a></td>
-        <td><a><img src="backgrounds/bouncingball.jpg" class="games"></a></td>
+        <td><a><img src="backgrounds/bouncingball.png" class="games"></a></td>
+    </tr>
 
+</table><br>
+<h3 style="color: whitesmoke; margin-left: 300px;">ON TOP DEMAND:</h3><br>
+<table>
+    <tr>
+        <td>
+            <a href=""><img src="backgrounds/planetdefence.jpg" alt="" class="games"></a>
+        </td>
+        <td>
+            <a href=""><img src="backgrounds/floppybird.jpg" alt="" class="games"> </a>
+        </td>
+        <td>
+            <a href=""><img src="backgrounds/hangman.jpg" alt="" class="games"></a>
+        </td>
+        <td>
+            <a href=""><img src="backgrounds/menja.png" alt="" class="games"></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href=""><img src="backgrounds/tetris.png" alt="" class="games"></a>
+        </td>
+        <td>
+            <a href=""><img src="backgrounds/wackamole.webp" alt="" class="games"></a>
+        </td>
+        <td>
+            <a href=""><img src="backgrounds/memorygame.webp" alt="" class="games"></a>
+        </td>
+        <td>
+            <a href=""><img src="backgrounds/trafficracing.jpeg" alt="" class="games"></a>
+        </td>
     </tr>
 
 </table>
-
-
-
-
-
-
 </div>
 
 
@@ -244,7 +293,7 @@
             break;
         }
         case 1:{
-            b.style.backgroundImage='url(backgrounds/bouncingball.jpg)';
+            b.style.backgroundImage='url(backgrounds/bouncingball.png)';
             b.style.backgroundSize='cover';
             break;
         }
@@ -263,8 +312,6 @@
             b.style.backgroundImage='url(backgrounds/tetris.png)';
             b.style.backgroundSize='cover';
         }
-       
-
     }
 }
 function changeimageleft()
@@ -277,7 +324,6 @@ function changeimageright()
 var button="right";
 display(button);
 }
-
 </script>
 <br><br><br><br><br><br>
 </body>

@@ -60,8 +60,25 @@
         color: white;
         box-shadow: 1px 1px 10px grey;
       }
-      
-     
+      #enteredotp{
+        border-radius: 5px;
+            height: 25px;
+            width:150px;
+            border-color: azure;
+            color: rgb(255, 0, 0);
+            font-size:medium;
+            visibility: hidden;
+         
+      }
+      #otp{
+        border-radius: 10px;
+            height: 25px;
+            width:150px;
+            border-color: azure;
+            color: rgb(255, 0, 0);
+            font-size:medium;
+            visibility: hidden;
+      }
     </style>
 </head>
 <body >
@@ -70,16 +87,14 @@
 <legend style="text-align: center;color: azure; font-size: xx-large;font-family: Times new Roman;">Sign Up</legend>
 <div style="text-align: center;">
     <input type="text" placeholder="Enter Your Email address" required id="to" > <br><br>
+    <input type="text" placeholder="Enter the OTP" id="enteredotp" required><br>
+    <input type="text"  id="otp"><br>
     <button onclick="sendMail()">Send OTP</button><br>
     
-
 </div>      
-
-
-
-
 </fieldset>
     </form>
+    
     <script>
         function preloadImages() {
             const images = ['bg5.jpg','joystick.webp','rrr.jpg'];
@@ -90,12 +105,16 @@
         preloadImages();
         function sendMail()
 {
-   
+    let otp = Math.floor((Math.random() * 10000) + 1);
+  document.getElementById("otp").value=otp;
 var params={
 to:document.getElementById("to").value,
+otp:document.getElementById("otp").value,
 };
 emailjs.send("service_ezsao5h","template_9h3yh08",params);
 alert("sent");
+const visible=document.getElementById("enteredotp");
+visible.style.visibility="visible";
 }
     </script>
     
