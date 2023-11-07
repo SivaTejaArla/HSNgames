@@ -70,7 +70,7 @@
             visibility: hidden;
          
       }
-      #password{
+      .password{
         border-radius: 10px;
             height: 25px;
             width:300px;
@@ -80,6 +80,7 @@
             visibility: hidden;
 
       }
+  
       #otp{
         border-radius: 10px;
             height: 25px;
@@ -90,48 +91,18 @@
             visibility: hidden;
       }
 
+#verify{
+  border-radius: 5px;
+        height:35px;
+        width:90px;
+        background-color: rgb(10, 222, 245);
+        color: white;
+        box-shadow: 1px 1px 10px grey;
+        visibility: hidden;
 
-      #snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
+
 }
 
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
     </style>
 </head>
 <body >
@@ -140,12 +111,13 @@
 <legend style="text-align: center;color: azure; font-size: xx-large;font-family: Times new Roman;">Sign Up</legend>
 <div style="text-align: center;"><br>
     <input type="text" placeholder="Enter Your Email address" required id="to" name="username"> <br><br>
-    <input type="text" placeholder="Enter the OTP" id="enteredotp" required><br>
-    <div id="snackbar">OTP verified successfully</div>
-    <input type="text" placeholder="Enter your password" id="password" required><br>
-    <input type="text" placeholder="Confirm your password" id="password" required><br>
+    <input type="text" placeholder="Enter the OTP" id="enteredotp" required>
+    <input type="submit" id="verify" placeholder="Verify">
+    <input type="text" placeholder="Enter your password" class="password" required><br>
+    <input type="text" placeholder="Confirm your password" class="password" required><br>
     <button onclick="sendMail()">Send OTP</button><br>
     <input type="text"  id="otp"><br>
+    <input type="text" id="enteredotp">
 </div>      
 </fieldset>
     </form>
@@ -161,24 +133,27 @@
 
         function sendMail()
 {
-    let otp = Math.floor((Math.random() * 10000) + 1);
+    const otp = Math.floor((Math.random() * 10000) + 1);
   document.getElementById("otp").value=otp;
 var params={
 to:document.getElementById("to").value,
 otp:document.getElementById("otp").value,
 };
-emailjs.send("service_ezsao5h","template_9h3yh08",params);
+
+//emailjs.send("service_ezsao5h","template_9h3yh08",params);
 const visible=document.getElementById("enteredotp");
+const verify=document.getElementById("verify");
 visible.style.visibility="visible";
-const password=document.getElementById("password");
-var otpentered=document.getElementById("enteredotp").value;
-if(otp==enteredotp){
-    var x = document.getElementById("snackbar");
-  x.className = "show";
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+verify.style.visibility="visible";
+alert(otp);
+const otpentered=document.getElementById("enteredotp").value;
+document.getElementById("enteredotp").value=otpentered;
+if(otp==otpentered){
+    const password=document.getElementsByClassName("password");
 password.style.visibility="visible";
 }
 }
+
     </script>
     
 </body>
