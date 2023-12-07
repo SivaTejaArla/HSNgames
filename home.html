@@ -10,31 +10,8 @@
             background-color: rgb(24, 24, 24);
             overflow-y: scroll;
         }
-        
-        .navigation button{
-
-            height:35px;
-            width:90px;
-            background-color: rgb(60, 60, 60);
-            border-radius: 5px;
-            box-shadow: 20px;
-
-            float:left;
-            text-shadow: 10px;
-            color: white;
-            margin-left: 5px;
-            box-shadow: 1px 1px 5px rgb(137,131,131);
-        }
-        .navigation button:hover{
-            background-color: black;
-            color:white;
-            height: 40px;
-        width: 95px;
-        }
-        .navigation button:active{
-            background-color: rgb(9, 128, 33);
-            color:white;
-        }
+    
+       
   div img {
     height: 35px;
     float: left;
@@ -44,7 +21,7 @@
         border: 0px;
        
         position: sticky;
-        height: 46px;
+        height: 56px;
       
         
        }
@@ -55,24 +32,6 @@
         float:right;
         width: 250px;
        }
-       #login{
-            height:35px;
-            width:90px;
-            background-color: rgb(9, 128, 33);
-            border-radius: 5px;
-            box-shadow: none;
-            float:right;
-            text-shadow: 10px;
-            color: white;
-            margin-right: 5px;
-        
-       }
-       #login:hover{
-        background-color: rgb(54, 30, 212);
-        height: 40px;
-        width: 95px;
-        cursor: pointer;
-       }
     
 
      table .games{
@@ -80,7 +39,7 @@
         margin-left: 100px;
         margin-top: 0px;
         width:250px;
-       box-shadow: 5px 5px 10px grey;
+       box-shadow: 0 0 50px ;
         border-radius: 10px;
         transition: 0.5s;
         display: inline;
@@ -91,6 +50,7 @@
        table .games:hover{
         height: 320px;
         width:270px ;
+        box-shadow: 0 0 50px #ff3333 ;
         cursor: pointer;
        }
   
@@ -110,19 +70,21 @@
         
        }
        #gamesdisplay{
-        border-radius: 20px;
+        border-radius: 10px;
         display: inline-table;
         width:60%;
         height:500px;
-        box-shadow: 5px 5px 10px rgb(137, 131, 131);
-        background-image: url(backgrounds/tetris.png);
+        box-shadow: 0 0 30px #ff3333;
+        background-image: url(backgrounds/snakegame.jpg);
         background-size: cover;
+        margin-left: 0px;
        }
        #navbuttonleft{
         height:100px;
         width:50px;
         display: inline-table;
         margin-left: 230px;
+        padding-left: 30px;
        font-size: xx-large;
        border-radius: 10px;
         color: whitesmoke;
@@ -136,6 +98,7 @@
         border-radius: 10px;
         color: whitesmoke;
         margin-left: 15px;
+        padding-left: 30px;
         background-color: rgb(9, 128, 33);
        }
       
@@ -165,24 +128,128 @@
         color: whitesmoke;
         cursor: pointer;
     }
+    button  {
+  position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+  height:50px;
+  width: min-content;
+}
+
+button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  /* box-shadow: 0 0 35px var(--clr); */
+  animation: box 3s infinite;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #272822;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+button i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+button i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+#login{
+    float: right;
+}
+ 
     </style>
 </head>
 <body >
     <fieldset>
         <div class="navigation">
-            <img src="backgrounds/logo.png">
-            <button>Store</button>
-            <button>Contact Us</button>
-            <button>About</button>
-            <input type="text" placeholder="Search in the store....">
-            <button id="login" onclick="window.open('login.html');">Login</button>
+            <button style="--clr:#39FF14" id="login" onclick=openlogin()><span>Login</span><i></i></button>
+            <button style="--clr:#FF44CC"><span>Store</span><i></i></button>
+            <button style="--clr:#0FF0FC"><span>About</span><i></i></button>
+            <button style="--clr:#8A2BE2"><span>Contact</span><i></i></button>
+            
         </div></fieldset><br>
         <marquee style="color: rgb(246, 255, 0) ;font-size: x-large;" scrollamount="10"><b>Welcome to HSN games........</b></marquee><br>
     <div>
-            <button id="navbuttonleft" onclick="changeimageleft()" ><b><</b></button>
-        <fieldset id="gamesdisplay">
-            <legend style="color:white;font-size: X-large;text-align: center;"><b>NOW AVAILABLE</b></legend>
-    </fieldset><button id="navbuttonright" onclick="changeimageright()"><b>></b></button>
+      
+            <button id="navbuttonleft" onclick="changeimageleft()" ><span><b><</b></span><i></i></button>
+        <fieldset id="gamesdisplay" >
+            <legend style="color:white;font-size: X-large;text-align: center; letter-spacing: 0.1rem; font-family:sans-serif;"><b>NOW AVAILABLE</b></legend>
+    </fieldset><button id="navbuttonright" onclick="changeimageright()"><span><b>></b></span><i></i></button>
     </div>
   <br>
        <marquee style="color: whitesmoke ;font-size: x-large;background-color: rgb(60, 60, 60) ;height: 30px; " scrollamount="10"><b>“Play is our brain’s favorite way of learning.” – Diane Ackerman<span style="margin-left: 300px;">“Play is the highest form of research.” – Albert Einstein</span><span style="margin-left: 300px;">“Whoever wants to understand much must play much.” – Gottfried Benn</span><span style="margin-left: 300px;">“To give a child a mechanical toy is equivalent to playing for him” – Walter Wood</span><span style="margin-left: 300px;">“Nothing lights up a child’s brain like play.” – Dr. Stuart Brown</span></b></marquee>
@@ -281,6 +348,9 @@
 
 
 <script>
+    function openlogin(){
+        window.open("login.html");
+    }
     var count=0;
     function display(button){
         if(button=="left"){
@@ -297,39 +367,47 @@
     switch (count){
         case -1:
             {
-                b.style.backgroundImage='url(backgrounds/snakegame.jpg)';
-                b.style.backgroundSize='cover';
+                b.style.backgroundImage='url(backgrounds/tetris.png)';
+            b.style.backgroundSize='cover';
+            b.style.boxShadow= '0 0 30px #031eff'; 
                 break;
             }
         case -2:{
             b.style.backgroundImage='url(backgrounds/pong.jpg)';
             b.style.backgroundSize='cover';
+            b.style.boxShadow= '0 0 30px #f6ff33';
             break;
         }
         case -3:{
             b.style.backgroundImage='url(backgrounds/quizz.jpg';
             b.style.backgroundSize='cover';
+            b.style.boxShadow= '0 0 30px #ff3333';
             break;
         }
         case 1:{
             b.style.backgroundImage='url(backgrounds/bouncingball.png)';
             b.style.backgroundSize='cover';
+            b.style.boxShadow= '0 0 30px #f6ff33';
             break;
         }
         case 2:{
             b.style.backgroundImage='url(backgrounds/wackamole.webp)';
             b.style.backgroundSize='cover';
+            b.style.boxShadow= '0 0 30px #ff3f33';
             break;
         }
         case 3: {
             b.style.backgroundImage='url(backgrounds/memorygame.webp)';
             b.style.backgroundSize='cover';
+            b.style.boxShadow= '0 0 30px #ff3393';
             break;
         }
      
         default:{
-            b.style.backgroundImage='url(backgrounds/tetris.png)';
-            b.style.backgroundSize='cover';
+            b.style.backgroundImage='url(backgrounds/snakegame.jpg)';
+                b.style.backgroundSize='cover';
+                b.style.boxShadow= '0 0 30px #ff3333';
+            
         }
     }
 }

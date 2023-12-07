@@ -52,7 +52,7 @@
             color: rgb(255, 0, 0);
             font-size:medium;
         }
-      button{
+      #sendotpbutton{
         border-radius: 5px;
         height:35px;
         width:90px;
@@ -70,7 +70,7 @@
             visibility: hidden;
          
       }
-      .password{
+      #password{
         border-radius: 10px;
             height: 25px;
             width:300px;
@@ -78,6 +78,19 @@
             color: rgb(255, 0, 0);
             font-size:medium;
             visibility: hidden;
+            margin-top: 25px;
+
+      }
+      #repassword{
+        border-radius: 10px;
+            height: 25px;
+            width:300px;
+            border-color: azure;
+            color: rgb(255, 0, 0);
+            font-size:medium;
+            visibility: hidden;
+            margin-top: 25px;
+            margin-bottom: 25px;
 
       }
   
@@ -97,9 +110,9 @@
         width:90px;
         background-color: rgb(10, 222, 245);
         color: white;
-        box-shadow: 1px 1px 10px grey;
         visibility: hidden;
-
+        margin-left: 20px;
+        font-size: medium;
 
 }
 
@@ -112,12 +125,11 @@
 <div style="text-align: center;"><br>
     <input type="text" placeholder="Enter Your Email address" required id="to" name="username"> <br><br>
     <input type="text" placeholder="Enter the OTP" id="enteredotp" required>
-    <input type="submit" id="verify" placeholder="Verify">
-    <input type="text" placeholder="Enter your password" class="password" required><br>
-    <input type="text" placeholder="Confirm your password" class="password" required><br>
-    <button onclick="sendMail()">Send OTP</button><br>
+    <button id="verify" placeholder="Verify" onclick="checkotp()">Verify</button>
+    <input type="text" placeholder="Enter your password" id="password" required><br>
+    <input type="text" placeholder="Confirm your password" id="repassword" required><br>
+    <button onclick="sendMail()" id="sendotpbutton">Send OTP</button><br>
     <input type="text"  id="otp"><br>
-    <input type="text" id="enteredotp">
 </div>      
 </fieldset>
     </form>
@@ -145,13 +157,28 @@ const visible=document.getElementById("enteredotp");
 const verify=document.getElementById("verify");
 visible.style.visibility="visible";
 verify.style.visibility="visible";
+document.getElementById("otp").value=otp;
 alert(otp);
-const otpentered=document.getElementById("enteredotp").value;
-document.getElementById("enteredotp").value=otpentered;
-if(otp==otpentered){
-    const password=document.getElementsByClassName("password");
-password.style.visibility="visible";
+const sendotp=document.getElementById("sendotpbutton");
+sendotpbutton.style.visibility="hidden";
 }
+function checkotp(){
+const ot=document.getElementById("otp").value;
+const o=document.getElementById("enteredotp").value;
+if(ot == o){  
+    var otp=true;
+}else{
+    alert("Incorrect OTP");  
+}
+if(otp){
+alert("Correct");
+const pass=document.getElementById("password");
+const repass=document.getElementById("repassword");
+pass.style.visibility="visible";
+repass.style.visibility="visible";
+
+}
+//alert(o);
 }
 
     </script>
