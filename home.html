@@ -39,7 +39,7 @@
         margin-left: 100px;
         margin-top: 0px;
         width:250px;
-       box-shadow: 0 0 50px ;
+       box-shadow: 0 0 40px ;
         border-radius: 10px;
         transition: 0.5s;
         display: inline;
@@ -62,6 +62,7 @@
         margin-left: 20px;
         float: left;
         display: inline;
+        box-shadow: 0 0 10px #ff3393;
        height: 500px;
        
        }
@@ -113,6 +114,7 @@
      ul{
         color: whitesmoke;
         font-size: larger;
+        
      }
      li{
         
@@ -121,7 +123,7 @@
         transition: 0.9s;
         list-style:disc;
         transition: 0.2s;
-        text-shadow: 1px 1px  5px;
+        list-style-type: georgian;
      }
      li:hover{
         font-size: larger;
@@ -240,7 +242,7 @@ button:hover i::after {
             <button style="--clr:#39FF14" id="login" onclick=openlogin()><span>Login</span><i></i></button>
             <button style="--clr:#FF44CC"><span>Store</span><i></i></button>
             <button style="--clr:#0FF0FC"><span>About</span><i></i></button>
-            <button style="--clr:#8A2BE2"><span>Contact</span><i></i></button>
+            <button style="--clr:#8A2BE2" onclick="scrollToEnd()"><span>Contact</span><i></i></button>
             
         </div></fieldset><br>
         <marquee style="color: rgb(246, 255, 0) ;font-size: x-large;" scrollamount="10"><b>Welcome to HSN games........</b></marquee><br>
@@ -345,8 +347,7 @@ button:hover i::after {
 </table>
 </div>
 
-
-
+</div>
 <script>
     function openlogin(){
         window.open("login.html");
@@ -411,6 +412,19 @@ button:hover i::after {
         }
     }
 }
+function scrollToEnd() {
+            // Get the height of the entire document
+            var documentHeight = Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight
+            );
+
+            // Scroll to the end of the page
+            window.scrollTo({
+                top: documentHeight,
+                behavior: 'smooth' // Optional: adds a smooth scrolling effect
+            });
+        }
 function changeimageleft()
 {
 var button="left";
@@ -421,7 +435,12 @@ function changeimageright()
 var button="right";
 display(button);
 }
-</script>
-<br><br><br><br><br><br>
+</script><br><br><br><br><br>
+<footer>
+    <div style=" text-align: center;height:300px;box-shadow: 0 0 10px rgb(149, 255, 0);">
+    
+    
+    </div>
+</footer>
 </body>
 </html>
