@@ -6,7 +6,7 @@
     
         $conn = mysqli_connect('localhost','root','','logins') or die("Connection Failed");
         $new="connected";
-        if(isset($_POST['name']) && isset($_POST['email']))
+        if(isset($_POST['username']) && isset($_POST['password']))
         {
 
             $username=$_POST['username'];

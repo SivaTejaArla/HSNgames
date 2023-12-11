@@ -62,7 +62,7 @@
             border-color: azure;
             color: rgb(255, 0, 0);
             font-size:medium;
-            visibility: hidden;
+            
          
       }
       #password{
@@ -198,7 +198,7 @@ button:hover i::after {
   }
 }
 #verify{
-    visibility: hidden;
+   
     margin-left: 10px;
 }
 
@@ -210,18 +210,13 @@ button:hover i::after {
     </style>
 </head>
 <body >
-    <form action="C:xampp/htdocs/HSNgames/data.php" method="POST" target="_blank">
+    <form >
         <fieldset>
 <legend style="text-align: center;color: azure; font-size: xx-large;font-family: Times new Roman;">Sign Up</legend>
 <div style="text-align: center;"><br>
     <input type="text" placeholder="Enter Your Email address"  id="username" name="username"> <br><br>
-    <input type="text" placeholder="Enter the OTP" id="enteredotp" >
-    <button style="--clr:#0FF0FC" onclick="checkotp()" id="verify" ><span>Verify</span><i></i></button>
-    <input type="text" placeholder="Enter your password" id="password" name="password"><br>
-    <input type="text" placeholder="Confirm your password" id="repassword" name="password"><br>
     <button style="--clr:#8A2BE2" id="sendotpbutton" onclick="sendMail()"><span>Send OTP</span><i></i></button>
     <br>
-    <button style="--clr:#FF44CC" id="submit" onclick="connectdb()" name="submit"><span>Sign Up</span><i></i></button>
     <input type="text"  id="otp"><br>
 </div>      
 </fieldset>
@@ -230,7 +225,6 @@ button:hover i::after {
     <script>
       function connectdb(){
         alert("kk");
-        window.open("C:/xampp/htdocs/sample.php");
       }
         function preloadImages() {
             const images = ['bg5.jpg','joystick.webp','rrr.jpg'];
@@ -248,37 +242,17 @@ var params={
 to:document.getElementById("username").value,
 otp:document.getElementById("otp").value,
 };
-
+var username=document.getElementById('username');
 //emailjs.send("service_ezsao5h","template_9h3yh08",params);
-const visible=document.getElementById("enteredotp");
-const verify=document.getElementById("verify");
-visible.style.visibility="visible";
-verify.style.visibility="visible";
 document.getElementById("otp").value=otp;
 alert(otp);
-const sendotp=document.getElementById("sendotpbutton");
-sendotpbutton.style.visibility="hidden";
+localStorage.setItem('OTP',otp);
+localStorage.setItem('username',username);
+window.open("newsignup.html");
 }
-function checkotp(){
-const ot=document.getElementById("otp").value;
-const o=document.getElementById("enteredotp").value;
-if(ot == o){  
-    var otp=true;
-}else{
-    alert("Incorrect OTP");  
-}
-if(otp){
-alert("Correct");
-const pass=document.getElementById("password");
-const repass=document.getElementById("repassword");
-const signup=document.getElementById("submit");
-pass.style.visibility="visible";
-repass.style.visibility="visible";
-signup.style.visibility="visible";
 
-}
 //alert(o);
-}
+
 
     </script>
     
