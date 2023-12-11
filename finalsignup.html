@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,21 +186,18 @@ button:hover i::after {
     box-shadow: #27272c;
   }
 }
-#em{
 
-  
-}
     </style>
 </head>
-<body >
-    <form action="connectdatabase.php" method="POST" target="_blank" >
+<body>
+    <form action="home.php" method="POST" target="_blank" >
         <fieldset>
 <legend style="text-align: center;color: azure; font-size: xx-large;font-family: Times new Roman;">Sign Up</legend>
 <div style="text-align: center;"><br>
-  <input type="text" id="em" placeholder="Enter Your Username" name="username">
+  <input type="text" id="username" placeholder="Enter Your Username" name="username">
     <input type="text" placeholder="Enter your password" id="password" name="password"><br>
-    <input type="text" placeholder="Confirm your password" id="repassword" name="password"><br>
-    <button style="--clr:#FF44CC" id="submit"  name="submit"><span>Sign Up</span><i></i></button>
+    <input type="text" placeholder="Confirm your password" id="repassword" ><br>
+    <button type="submit" style="--clr:#FF44CC" id="submit"  name="submit"><span>Sign Up</span><i></i></button>
 </div>      
 </fieldset>
     </form>
@@ -222,7 +218,6 @@ function checkotp(){
 const password=document.getElementById("password").value;
 const repass=document.getElementById("repassword").value;
 const signup=document.getElementById("submit");
-var email =localStorage.getItem('username');
 
 }
 //alert(o);
